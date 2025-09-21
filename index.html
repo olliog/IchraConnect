@@ -76,6 +76,17 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 </script>
+<script type="text/javascript">
+// Conditional redirect for root route only
+(function() {
+  // Check if we're on the exact root path
+  if (window.location.pathname === '/' || window.location.pathname === '') {
+    // Redirect to the external ReadMe page
+    window.location.replace('https://ichra-connect.readme.io/');
+  }
+  // If not root path, let the page load normally
+})();
+</script>
 
 
 <link rel="stylesheet" href="styles.css">
