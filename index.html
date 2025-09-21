@@ -79,8 +79,9 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <script type="text/javascript">
 // Conditional redirect for root route only
 (function() {
-  // Check if we're on the exact root path
-  if (window.location.pathname === '/' || window.location.pathname === '') {
+  // Check if we're on the exact root path (GitHub Pages uses /IchraConnect/)
+  if (window.location.pathname === '/' || window.location.pathname === '' ||
+      window.location.pathname === '/IchraConnect/' || window.location.pathname === '/IchraConnect') {
     // Redirect to the external ReadMe page
     window.location.replace('https://ichra-connect.readme.io/');
   }
