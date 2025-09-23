@@ -125,7 +125,19 @@ format:
               }
             }
 
-            // Redirect everything else to the external ReadMe page
+            // Map specific pages to their ReadMe equivalents
+            var pageMap = {
+              '/csv/csv_implementation_guide.html': 'https://ichra-connect.readme.io/docs/csv-implementation-guide',
+              '/IchraConnect/csv/csv_implementation_guide.html': 'https://ichra-connect.readme.io/docs/csv-implementation-guide'
+            };
+
+            // Check for specific page mappings
+            if (pageMap[path]) {
+              window.location.replace(pageMap[path]);
+              return;
+            }
+
+            // Default redirect to homepage for all other pages
             window.location.replace('https://ichra-connect.readme.io/');
           })();
           </script>
