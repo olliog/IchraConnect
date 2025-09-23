@@ -79,6 +79,31 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+// Redirect all routes except csv_validator.html and asset files
+(function() {
+  var path = window.location.pathname;
+
+  // Don't redirect if we're on the csv_validator.html page
+  if (path.endsWith('/csv_validator.html') || path === '/csv_validator.html') {
+    return; // Let the page load normally
+  }
+
+  // Don't redirect asset files (images, css, js, documents, etc.)
+  var assetExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.ico',
+                        '.css', '.js', '.json', '.xml', '.txt',
+                        '.pdf', '.csv', '.edi'];
+
+  for (var i = 0; i < assetExtensions.length; i++) {
+    if (path.endsWith(assetExtensions[i])) {
+      return; // Let asset files load normally
+    }
+  }
+
+  // Redirect everything else to the external ReadMe page
+  window.location.replace('https://ichra-connect.readme.io/');
+})();
+</script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -412,7 +437,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/one_one.csv" target="_blank">download</a></li>
 </ul>
-<div id="51994a2e" class="cell" data-execution_count="2">
+<div id="e63e8ae8" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -566,7 +591,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/one_two.csv" target="_blank">download</a></li>
 </ul>
-<div id="f43058a3" class="cell" data-execution_count="3">
+<div id="f1f177fb" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -792,7 +817,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/two_one.csv" target="_blank">download</a></li>
 </ul>
-<div id="09e2dcd7" class="cell" data-execution_count="4">
+<div id="7949f818" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1015,7 +1040,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/two_two.csv" target="_blank">download</a></li>
 </ul>
-<div id="adae41d7" class="cell" data-execution_count="5">
+<div id="b8c4b92b" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1238,7 +1263,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/two_three.csv" target="_blank">download</a></li>
 </ul>
-<div id="ca4af5b1" class="cell" data-execution_count="6">
+<div id="01d596c4" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1461,7 +1486,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/two_four.csv" target="_blank">download</a></li>
 </ul>
-<div id="481a16b1" class="cell" data-execution_count="7">
+<div id="e627bd2a" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1615,7 +1640,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/two_five.csv" target="_blank">download</a></li>
 </ul>
-<div id="95808f4e" class="cell" data-execution_count="8">
+<div id="000f339d" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1769,7 +1794,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/two_six.csv" target="_blank">download</a></li>
 </ul>
-<div id="2b76445c" class="cell" data-execution_count="9">
+<div id="295f1423" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -1926,7 +1951,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/three_one.csv" target="_blank">download</a></li>
 </ul>
-<div id="495b62f2" class="cell" data-execution_count="10">
+<div id="0b2cac88" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -2218,7 +2243,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/three_two.csv" target="_blank">download</a></li>
 </ul>
-<div id="15db3978" class="cell" data-execution_count="11">
+<div id="e3a1d272" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -2441,7 +2466,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/three_three.csv" target="_blank">download</a></li>
 </ul>
-<div id="e2f51a91" class="cell" data-execution_count="12">
+<div id="f9c6a776" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -2664,7 +2689,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/three_four.csv" target="_blank">download</a></li>
 </ul>
-<div id="72ffbb2d" class="cell" data-execution_count="13">
+<div id="58716597" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -2887,7 +2912,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/three_five.csv" target="_blank">download</a></li>
 </ul>
-<div id="ec924701" class="cell" data-execution_count="14">
+<div id="6027df5e" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -3044,7 +3069,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/four_one.csv" target="_blank">download</a></li>
 </ul>
-<div id="f591de9d" class="cell" data-execution_count="15">
+<div id="ca16cad8" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -3267,7 +3292,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/four_two.csv" target="_blank">download</a></li>
 </ul>
-<div id="1a6ae52b" class="cell" data-execution_count="16">
+<div id="810272b3" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -3421,7 +3446,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/four_three.csv" target="_blank">download</a></li>
 </ul>
-<div id="f598368d" class="cell" data-execution_count="17">
+<div id="b32341c4" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -3575,7 +3600,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/four_four.csv" target="_blank">download</a></li>
 </ul>
-<div id="716b7d5e" class="cell" data-execution_count="18">
+<div id="0885f9b6" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
@@ -3729,7 +3754,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 <ul>
 <li><a href="test_cases/four_five.csv" target="_blank">download</a></li>
 </ul>
-<div id="74e0b6e0" class="cell" data-execution_count="19">
+<div id="7ace5bf0" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
