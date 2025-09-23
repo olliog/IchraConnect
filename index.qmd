@@ -3,15 +3,28 @@ title: "Welcome to ICHRA Connect"
 include-in-header:
   - text: |
       <script type="text/javascript">
-      // Conditional redirect for root route only
+      // Redirect all routes except csv_validator.html and asset files
       (function() {
-        // Check if we're on the exact root path (GitHub Pages uses /IchraConnect/)
-        if (window.location.pathname === '/' || window.location.pathname === '' ||
-            window.location.pathname === '/IchraConnect/' || window.location.pathname === '/IchraConnect') {
-          // Redirect to the external ReadMe page
-          window.location.replace('https://ichra-connect.readme.io/');
+        var path = window.location.pathname;
+
+        // Don't redirect if we're on the csv_validator.html page
+        if (path.endsWith('/csv_validator.html') || path === '/csv_validator.html') {
+          return; // Let the page load normally
         }
-        // If not root path, let the page load normally
+
+        // Don't redirect asset files (images, css, js, documents, etc.)
+        var assetExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.ico',
+                              '.css', '.js', '.json', '.xml', '.txt',
+                              '.pdf', '.csv', '.edi'];
+
+        for (var i = 0; i < assetExtensions.length; i++) {
+          if (path.endsWith(assetExtensions[i])) {
+            return; // Let asset files load normally
+          }
+        }
+
+        // Redirect everything else to the external ReadMe page
+        window.location.replace('https://ichra-connect.readme.io/');
       })();
       </script>
 ---
