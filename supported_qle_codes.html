@@ -100,19 +100,17 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
     }
   }
 
-  // Map specific pages to their ReadMe equivalents
-  var pageMap = {
-    '/csv/csv_implementation_guide.html': 'https://ichra-connect.readme.io/docs/csv-implementation-guide',
-    '/IchraConnect/csv/csv_implementation_guide.html': 'https://ichra-connect.readme.io/docs/csv-implementation-guide'
-  };
-
-  // Check for specific page mappings
-  if (pageMap[path]) {
-    window.location.replace(pageMap[path]);
+  // Generic redirect: convert any .html page to ReadMe docs URL
+  if (path.endsWith('.html')) {
+    // Extract filename from path (remove directories)
+    var filename = path.split('/').pop();
+    // Remove .html extension and convert underscores to hyphens
+    var docName = filename.replace('.html', '').replace(/_/g, '-');
+    window.location.replace('https://ichra-connect.readme.io/docs/' + docName);
     return;
   }
 
-  // Default redirect to homepage for all other pages
+  // Default redirect to homepage for all other routes
   window.location.replace('https://ichra-connect.readme.io/');
 })();
 </script>
@@ -442,7 +440,7 @@ gtag('config', 'G-TT9QQLNB0E', { 'anonymize_ip': true});
 </header>
 
 
-<div id="0e814039" class="cell" data-execution_count="1">
+<div id="8c26b0e3" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <colgroup>
